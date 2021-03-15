@@ -33,17 +33,12 @@ public class TicTacToeGame
 
     public static void showBoard(char[] board)
     {
-        System.out.println("Current Board");
-
-        for (int index = 1; index < board.length; index++)
-        {
-            System.out.print(board[index] + " | ");
-            if(index == 3 || index == 6 || index == 9)
-            {
-                System.out.println();
-            }
-        }
-
+        System.out.println("\n" + board[1] + "  |  "  + board[2] + "  |  " + board[3]);
+        System.out.println("--------------");
+        System.out.println(" " + board[4] + "  |  "  + board[5] + "  |  " + board[6]);
+        System.out.println("--------------");
+        System.out.println(" " + board[7] + "  |  "  +board[8] + "  |  " + board[9]);
+        System.out.println("--------------");
     }
     public static char[] createBoard()
     {
