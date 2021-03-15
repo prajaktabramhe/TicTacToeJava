@@ -20,18 +20,35 @@ public class TicTacToeGame
 
         }
         System.out.println("Computer Letter is: " + ComputerLetter+" User Letter is : " + UserLetter);
+        showBoard(board);
     }
-    public static char chooseLetter(){
+    public static char chooseLetter()
+    {
         char symbol;
         Scanner UserInput = new Scanner(System.in);
         System.out.print("Enter your symbol");
-        symbol=UserInput.next().toUpperCase().charAt(0);
+        symbol = UserInput.next().toUpperCase().charAt(0);
         return symbol;
+    }
+
+    public static void showBoard(char[] board)
+    {
+        System.out.println("Current Board");
+
+        for (int index = 1; index < board.length; index++)
+        {
+            System.out.print(board[index] + " | ");
+            if(index == 3 || index == 6 || index == 9)
+            {
+                System.out.println();
+            }
+        }
+
     }
     public static char[] createBoard()
     {
         char[] board = new char[10];
-        for(int index = 0; index < board.length; index++)
+        for(int index = 1; index < board.length; index++)
         {
             board[index] = ' ';
         }
