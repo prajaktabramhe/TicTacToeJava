@@ -21,6 +21,24 @@ public class TicTacToeGame
         }
         System.out.println("Computer Letter is: " + ComputerLetter+" User Letter is : " + UserLetter);
         showBoard(board);
+        move(board,UserLetter);
+        showBoard(board);
+    }
+    public static void move(char[] board,char symbol)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the index from 1 to 9 to make the move");
+        int index=sc.nextInt();
+        if(board[index]==' ')
+        {
+            board[index]=symbol;
+        }
+        else
+            {
+                System.out.println("Index is not free");
+
+        }
+
     }
     public static char chooseLetter()
     {
