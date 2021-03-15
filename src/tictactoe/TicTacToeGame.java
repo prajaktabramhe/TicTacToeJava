@@ -1,5 +1,5 @@
 package tictactoe;
-
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,6 +7,7 @@ public class TicTacToeGame
 {
     public static void main(String[] args)
     {
+
         char[] board = createBoard();
         char UserLetter = chooseLetter();
         char ComputerLetter;
@@ -21,24 +22,28 @@ public class TicTacToeGame
         }
         System.out.println("Computer Letter is: " + ComputerLetter+" User Letter is : " + UserLetter);
         showBoard(board);
-        move(board,UserLetter);
+        int userMove = getUserMove(board);
         showBoard(board);
     }
-    public static void move(char[] board,char symbol)
+    public static int getUserMove(char[] board)
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the index from 1 to 9 to make the move");
-        int index=sc.nextInt();
-        if(board[index]==' ')
+        Integer[] validCells = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+
+        while (true)
         {
-            board[index]=symbol;
-        }
-        else
-            {
-                System.out.println("Index is not free");
+            System.out.println("What is your next move ? (1-9");
+            int index = sc.nextInt();
+            if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index))
+                return index;
 
         }
 
+    }
+    private static boolean isSpaceFree(char[] board, int index)
+    {
+        return board[index] == ' ';
     }
     public static char chooseLetter()
     {
