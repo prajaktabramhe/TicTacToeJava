@@ -112,11 +112,13 @@ public class TicTacToeGame
             if (line.equals("XXX"))
             {
                 temp= "X";
+                break;
             }
             // For O winner
             else if (line.equals("OOO"))
             {
                 temp= "O";
+                break;
             }
             else
             {
