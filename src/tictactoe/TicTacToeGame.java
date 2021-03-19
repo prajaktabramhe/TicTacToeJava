@@ -11,9 +11,11 @@ public class TicTacToeGame
         char[] board = createBoard();
         char UserLetter = chooseLetter();
         char ComputerLetter;
-        if (UserLetter == 'X') {
+        if (UserLetter == 'X')
+        {
             ComputerLetter = 'O';
-        } else {
+        } else
+        {
             ComputerLetter = 'X';
 
         }
@@ -31,7 +33,7 @@ public class TicTacToeGame
                 first=2;
             }
             else
-                {
+            {
                 getUserMove(board, ComputerLetter);
                 first=1;
             }
@@ -70,7 +72,8 @@ public class TicTacToeGame
         {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
@@ -122,7 +125,7 @@ public class TicTacToeGame
             }
             else
             {
-                temp= "P";
+                temp= "Play";
             }
         }
         return  temp;
